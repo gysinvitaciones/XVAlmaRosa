@@ -148,3 +148,45 @@ function enviarWhatsApp() {
 
     window.open(url, '_blank');
 }
+
+
+// ==== Reproductor de música ====
+const playBtn = document.getElementById('play-btn');
+const music = document.getElementById('background-music');
+
+playBtn.addEventListener('click', () => {
+  if (music.paused) {
+    music.play();
+    playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+  } else {
+    music.pause();
+    playBtn.innerHTML = '<i class="fas fa-play"></i>';
+  }
+});
+
+// ==== Buscar nombre en la lista ====
+function buscarInvitado() {
+  const input = document.getElementById('nombre').value.trim().toLowerCase();
+  const resultado = document.getElementById('resultado-busqueda');
+  const opciones = document.getElementById('opciones');
+
+  if (input === '') {
+    resultado.classList.add('hidden');
+    opciones.classList.add('hidden');
+    return;
+  }
+
+  resultado.classList.remove('hidden');
+  resultado.textContent = "Buscando...";
+
+  setTimeout(() => {
+    const nombres = Object.keys(maxInvitadosPorAsistente).map(n => n.toLowerCase());
+    if (nombres.includes(input)) {
+      resultado.textContent = "Invitado reconocido ✔️";
+      opciones.classList.remove('hidden');
+    } else {
+      resultado.textContent = "Nombre no encontrado ❌";
+      opciones.classList.add('hidden');
+    }
+  }, 300);
+}
