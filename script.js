@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // Configuración del contador regresivo para el evento
-    const eventDate = new Date('2024-10-26T18:00:00');
+    const eventDate = new Date('2025-11-15T20:00:00');
 
     function updateCountdown() {
         const now = new Date();
