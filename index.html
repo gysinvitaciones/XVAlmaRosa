@@ -12,6 +12,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <section id="music-player">
+      <div class="music-container">
+        <button id="play-btn"><i class="fas fa-play"></i></button>
+        <span>Haz clic para reproducir la música</span>
+        <audio id="background-music" src="IMAGENES/audio.mp3"></audio>
+      </div>
+    </section>
+    
     <section id="carousel" class="section">
         <div class="carousel">
             <div class="slide"><img src="IMAGENES/Imagen1.JPG" alt="Imagen 1"></div>
@@ -66,6 +74,12 @@
         <p>¡Me encantaría compartir este momento tan especial contigo!</p>
         <p>Por favor, confirma si contaré con tu presencia.</p><br>
         <form id="confirmation-form""> 
+
+            <label for="nombre">
+              <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre completo" required oninput="buscarInvitado()">
+            </label>
+            <p id="resultado-busqueda" class="hidden">Buscando nombre...</p>
+            
             <label for="nombre:">
                 <select name="nombre" id="nombre" required onchange="mostrarOpciones()">
                     <option value="Selecciona">Selecciona tu nombre</option>
