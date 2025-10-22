@@ -116,6 +116,7 @@ const maxInvitadosPorAsistente = {
     'Vanessa Toledo': 1,
     'Vanessa Domínguez': 1,
     'Damaris': 1,
+    'Elvis Ventura': 2,
 };
 
 function mostrarOpciones() {
