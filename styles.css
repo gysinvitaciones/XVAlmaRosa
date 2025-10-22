@@ -9,7 +9,7 @@
 button, a {
     text-decoration: none;
     color: #ffffff;
-    background-color: #cea8fc;
+    background-color: #d4b9f5;
     padding: 10px 20px;
     border-radius: 50px;
     font-size: 16px;
@@ -94,7 +94,7 @@ body, html {
 }
 
 #countdown {
-    background-color: #cea8fc;
+    background-color: #d4b9f5;
     background-size: cover;
     text-align: center;
     padding: 1em;
@@ -120,7 +120,7 @@ body, html {
 h2 {
     font-family: "Dancing Script", cursive;
     font-optical-sizing: auto;
-    color: #cea8fc;
+    color: #d4b9f5;
     font-size: 3em;
 }
 
@@ -143,15 +143,15 @@ select, input[type="number"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
-    border: 2px solid #cea8fc;
+    border: 2px solid #d4b9f5;
     border-radius: 10px;
-    background-color: #cea8fc;
+    background-color: #d4b9f5;
     color: #ffffff;
     font-size: 20px;
 }
 
 input[type="submit"] {
-    background-color: #cea8fc;
+    background-color: #d4b9f5;
     color: #ffffff;
     border: none;
     padding: 10px 20px;
@@ -161,11 +161,11 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #cea8fc;
+    background-color: #d4b9f5;
 }
 
 .formbutton {
-    background-color: #cea8fc;
+    background-color: #d4b9f5;
     color: #ffffff;
     border: none;
     padding: 10px 20px;
@@ -176,7 +176,7 @@ input[type="submit"]:hover {
 }
 
 .formbutton:hover {
-    background-color: #cea8fc;
+    background-color: #d4b9f5;
 }
 
 .hidden {
@@ -261,7 +261,7 @@ input[type="submit"]:hover {
 #nombre {
   width: 100%;
   padding: 12px;
-  border: 2px solid #cea8fc;
+  border: 2px solid #d4b9f5;
   border-radius: 10px;
   background-color: #fff;
   color: #454343;
