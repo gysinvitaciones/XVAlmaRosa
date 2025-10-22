@@ -164,29 +164,41 @@ playBtn.addEventListener('click', () => {
   }
 });
 
-// ==== Buscar nombre en la lista ====
-function buscarInvitado() {
-  const input = document.getElementById('nombre').value.trim().toLowerCase();
+// ==== Autocompletado de invitados ====
+function buscarInvitadoAuto(valor) {
+  const input = valor.toLowerCase().trim();
+  const datalist = document.getElementById('sugerencias');
   const resultado = document.getElementById('resultado-busqueda');
   const opciones = document.getElementById('opciones');
 
-  if (input === '') {
+  datalist.innerHTML = ''; // limpiar opciones previas
+  opciones.classList.add('hidden');
+
+  if (input.length < 2) {
+    resultado.textContent = '';
     resultado.classList.add('hidden');
-    opciones.classList.add('hidden');
     return;
   }
 
-  resultado.classList.remove('hidden');
-  resultado.textContent = "Buscando...";
+  const nombres = Object.keys(maxInvitadosPorAsistente);
+  const coincidencias = nombres.filter(n => n.toLowerCase().includes(input));
 
-  setTimeout(() => {
-    const nombres = Object.keys(maxInvitadosPorAsistente).map(n => n.toLowerCase());
-    if (nombres.includes(input)) {
-      resultado.textContent = "Invitado reconocido ✔️";
-      opciones.classList.remove('hidden');
-    } else {
-      resultado.textContent = "Nombre no encontrado ❌";
-      opciones.classList.add('hidden');
-    }
-  }, 300);
+  if (coincidencias.length > 0) {
+    coincidencias.forEach(nombre => {
+      const option = document.createElement('option');
+      option.value = nombre;
+      datalist.appendChild(option);
+    });
+  }
+
+  // Si el nombre coincide exactamente con uno de la lista
+  const nombreValido = nombres.find(n => n.toLowerCase() === input);
+  if (nombreValido) {
+    resultado.textContent = "Invitado reconocido ✔️";
+    resultado.classList.remove('hidden');
+    opciones.classList.remove('hidden');
+  } else {
+    resultado.textContent = "Escribe tu nombre completo para confirmar";
+    resultado.classList.remove('hidden');
+  }
 }
