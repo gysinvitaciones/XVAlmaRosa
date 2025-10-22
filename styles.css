@@ -236,7 +236,6 @@ input[type="submit"]:hover {
 }
 
 #play-btn {
-  background-color: rgba(218, 193, 249, 0.85);
   color: #fff;
   border: none;
   border-radius: 50%;
