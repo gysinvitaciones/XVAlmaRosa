@@ -219,50 +219,46 @@ input[type="submit"]:hover {
 }
 
 
-/* ==== Sección del reproductor de música ==== */
-#music-player {
-  background-color: #F2F2EF;
-  text-align: center;
-  padding: 30px 0;
+/* ==== BOTÓN DE MÚSICA SOBRE EL CARRUSEL ==== */
+#carousel {
+  position: relative;
+  overflow: hidden;
 }
 
-.music-container {
-  display: inline-flex;
+#music-overlay {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 15px;
-  background-color: #fff;
-  padding: 15px 25px;
-  border-radius: 50px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  gap: 5px;
+  z-index: 10;
 }
 
 #play-btn {
-  background-color: #DAC1F9;
+  background-color: rgba(218, 193, 249, 0.85);
   color: #fff;
   border: none;
   border-radius: 50%;
-  width: 55px;
-  height: 55px;
-  font-size: 22px;
+  width: 65px;
+  height: 65px;
+  font-size: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 #play-btn:hover {
   transform: scale(1.1);
-  background-color: #c3a9f3;
+  background-color: rgba(200, 170, 240, 0.95);
 }
 
-#music-player span {
-  font-size: 1.1em;
-  color: #333;
-  font-family: "Playfair Display", serif;
-}
-
-/* ==== Estilo del cuadro de texto del formulario ==== */
+/* ==== INPUT DE AUTOCOMPLETADO ==== */
 #nombre {
   width: 100%;
   padding: 12px;
@@ -275,6 +271,7 @@ input[type="submit"]:hover {
 }
 
 #resultado-busqueda {
-  font-size: 0.9em;
-  color: #888;
+  font-size: 0.95em;
+  color: #666;
+  margin-top: 5px;
 }
