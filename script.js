@@ -146,7 +146,7 @@ function enviarWhatsApp() {
     }
 
     const mensaje = `Hola, soy ${nombre}. ${asistira === "Sí" ? `Asistiremos ${numInvitados} persona(s).` : `No podré asistir.`}`;
-    const numero  = "+528118926229";
+    const numero  = "+529211172337";
     const url     = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
 
     window.open(url, '_blank');
