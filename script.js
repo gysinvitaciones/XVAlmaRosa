@@ -88,6 +88,34 @@ const maxInvitadosPorAsistente = {
     'Mayra Alor': 3,
     'Sr. Salvador': 2,
     'Pedro Alpuche': 3,
+    'Katia': 1,
+    'Nizza': 1,
+    'Edward': 1,
+    'Kristell': 1,
+    'Jocelyn': 2,
+    'Amy': 1,
+    'Emmanuel': 1,
+    'Denisse': 1,
+    'Katalina': 1,
+    'Ashley': 1,
+    'Ana': 1,
+    'Karime': 1,
+    'Tavo': 1,
+    'Isaac': 1,
+    'Silvana': 1,
+    'Naomi Zuricanday': 1,
+    'Naomi Camila': 1,
+    'Sharon': 1,
+    'Yani': 1,
+    'Sara': 1,
+    'Daniela': 1,
+    'Camila': 1,
+    'Kennet': 1,
+    'Vanessa': 2,
+    'Kayla': 1,
+    'Vanessa Toledo': 1,
+    'Vanessa Domínguez': 1,
+    'Damaris': 1,
 };
 
 function mostrarOpciones() {
@@ -143,7 +171,7 @@ function enviarWhatsApp() {
     }
 
     var mensaje = `Hola, soy ${nombre}. ${asistira === "Sí" ? `Asistiremos ${numInvitados} persona(s).` : `No podré asistir.`}`;
-    var numero  = "+528118926229"
+    var numero  = "+529211172337"
     var url     = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
 
     window.open(url, '_blank');
