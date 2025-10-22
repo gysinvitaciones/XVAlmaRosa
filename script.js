@@ -220,39 +220,15 @@ function buscarInvitadoAuto(valor) {
     });
   }
 
-   const nombreValido = nombres.find(n => n.toLowerCase() === input);
-    if (nombreValido) {
-        reiniciarFormulario(); // 🔄 limpiar antes de mostrar nuevo pase
-        resultado.textContent = "Invitado reconocido ✔️";
-        resultado.classList.remove('hidden');
-        opciones.classList.remove('hidden');
-    } else {
-        resultado.textContent = "Escribe tu nombre completo para confirmar";
-        resultado.classList.remove('hidden');
-    }
+  // Si el nombre coincide exactamente con uno de la lista
+  const nombreValido = nombres.find(n => n.toLowerCase() === input);
+  if (nombreValido) {
+    resultado.textContent = "Invitado reconocido ✔️";
+    resultado.classList.remove('hidden');
+    opciones.classList.remove('hidden');
+  } else {
+    resultado.textContent = "Escribe tu nombre completo para confirmar";
+    resultado.classList.remove('hidden');
+  }
 }
 
-
-// ==== Reiniciar formulario al cambiar de invitado ====
-function reiniciarFormulario() {
-    const opciones = document.getElementById('opciones');
-    const invitados = document.getElementById('invitados');
-    const inputInvitados = document.getElementById('num_invitados');
-    const mensajePase = document.getElementById('mensajePase');
-    const botonConfirmar = document.getElementById('confirmar-btn');
-    const resultado = document.getElementById('resultado-busqueda');
-
-    // Ocultar y limpiar todo
-    opciones.classList.add('hidden');
-    invitados.classList.add('hidden');
-    botonConfirmar.classList.add('hidden');
-    mensajePase.textContent = '';
-    inputInvitados.value = '';
-    resultado.textContent = '';
-}
-
-// Vincular evento de reinicio al input de nombre
-const inputNombre = document.getElementById('nombre');
-if (inputNombre) {
-    inputNombre.addEventListener('input', reiniciarFormulario);
-}
