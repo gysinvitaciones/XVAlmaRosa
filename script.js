@@ -119,14 +119,13 @@ const maxInvitadosPorAsistente = {
     'Elvis Ventura': 2,
 };
 
-// ==== Mostrar opciones (Asistiré / No asistiré) ====
 function mostrarOpciones() {
-    const nombreSeleccionado = document.getElementById('nombre').value;
-    const opciones = document.getElementById('opciones');
-    const invitados = document.getElementById('invitados');
-    const inputInvitados = document.getElementById('num_invitados');
-    const mensajePase = document.getElementById('mensajePase');
-    const botonConfirmar = document.getElementById('confirmar-btn');
+    var nombreSeleccionado = document.getElementById('nombre').value;
+    var opciones = document.getElementById('opciones');
+    var invitados = document.getElementById('invitados');
+    var inputInvitados = document.getElementById('num_invitados');
+    var mensajePase = document.getElementById('mensajePase');
+    var botonConfirmar = document.getElementById('confirmar-btn');
     
     if (nombreSeleccionado !== "Selecciona") {
         opciones.classList.remove('hidden');
@@ -140,15 +139,13 @@ function mostrarOpciones() {
     botonConfirmar.classList.add('hidden');
 }
 
-
-// ==== Mostrar campo de invitados según asistencia ====
 function mostrarInvitados(asistira) {
-    const invitados = document.getElementById('invitados');
-    const nombreSeleccionado = document.getElementById('nombre').value.trim();
-    const maxInvitados = maxInvitadosPorAsistente[nombreSeleccionado] || 0;
-    const inputInvitados = document.getElementById('num_invitados');
-    const mensajePase = document.getElementById('mensajePase');
-    const botonConfirmar = document.getElementById('confirmar-btn');
+    var invitados = document.getElementById('invitados');
+    var nombreSeleccionado = document.getElementById('nombre').value;
+    var maxInvitados = maxInvitadosPorAsistente[nombreSeleccionado] || 0;
+    var inputInvitados = document.getElementById('num_invitados');
+    var mensajePase = document.getElementById('mensajePase');
+    var botonConfirmar = document.getElementById('confirmar-btn');
     
     if (asistira) {
         invitados.classList.remove('hidden');
@@ -164,21 +161,19 @@ function mostrarInvitados(asistira) {
     }
 }
 
-
-// ==== Enviar confirmación por WhatsApp ====
 function enviarWhatsApp() {
-    const nombre = document.getElementById('nombre').value;
-    const asistira = document.getElementById('invitados').classList.contains('hidden') ? "No" : "Sí";
-    const numInvitados = document.getElementById('num_invitados').value || 0;
+    var nombre = document.getElementById('nombre').value;
+    var asistira = document.getElementById('invitados').classList.contains('hidden') ? "No" : "Sí";
+    var numInvitados = document.getElementById('num_invitados').value || 0;
 
     if (nombre === "" || (asistira === "Sí" && numInvitados <= 0)) {
         alert("Por favor, completa toda la información antes de confirmar.");
         return;
     }
 
-    const mensaje = `Hola, soy ${nombre}. ${asistira === "Sí" ? `Asistiremos ${numInvitados} persona(s).` : `No podré asistir.`}`;
-    const numero  = "+529211172337";
-    const url     = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+    var mensaje = `Hola, soy ${nombre}. ${asistira === "Sí" ? `Asistiremos ${numInvitados} persona(s).` : `No podré asistir.`}`;
+    var numero  = "+529211172337"
+    var url     = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
 
     window.open(url, '_blank');
 }
@@ -188,47 +183,44 @@ function enviarWhatsApp() {
 const playBtn = document.getElementById('play-btn');
 const music = document.getElementById('background-music');
 
-if (playBtn && music) {
-    playBtn.addEventListener('click', () => {
-        if (music.paused) {
-            music.play();
-            playBtn.innerHTML = '<i class="fas fa-pause"></i>';
-        } else {
-            music.pause();
-            playBtn.innerHTML = '<i class="fas fa-play"></i>';
-        }
-    });
-}
-
+playBtn.addEventListener('click', () => {
+  if (music.paused) {
+    music.play();
+    playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+  } else {
+    music.pause();
+    playBtn.innerHTML = '<i class="fas fa-play"></i>';
+  }
+});
 
 // ==== Autocompletado de invitados ====
 function buscarInvitadoAuto(valor) {
-    const input = valor.toLowerCase().trim();
-    const datalist = document.getElementById('sugerencias');
-    const resultado = document.getElementById('resultado-busqueda');
-    const opciones = document.getElementById('opciones');
+  const input = valor.toLowerCase().trim();
+  const datalist = document.getElementById('sugerencias');
+  const resultado = document.getElementById('resultado-busqueda');
+  const opciones = document.getElementById('opciones');
 
-    datalist.innerHTML = ''; // limpiar opciones previas
-    opciones.classList.add('hidden');
+  datalist.innerHTML = ''; // limpiar opciones previas
+  opciones.classList.add('hidden');
 
-    if (input.length < 2) {
-        resultado.textContent = '';
-        resultado.classList.add('hidden');
-        return;
-    }
+  if (input.length < 2) {
+    resultado.textContent = '';
+    resultado.classList.add('hidden');
+    return;
+  }
 
-    const nombres = Object.keys(maxInvitadosPorAsistente);
-    const coincidencias = nombres.filter(n => n.toLowerCase().includes(input));
+  const nombres = Object.keys(maxInvitadosPorAsistente);
+  const coincidencias = nombres.filter(n => n.toLowerCase().includes(input));
 
-    if (coincidencias.length > 0) {
-        coincidencias.forEach(nombre => {
-            const option = document.createElement('option');
-            option.value = nombre;
-            datalist.appendChild(option);
-        });
-    }
+  if (coincidencias.length > 0) {
+    coincidencias.forEach(nombre => {
+      const option = document.createElement('option');
+      option.value = nombre;
+      datalist.appendChild(option);
+    });
+  }
 
-    const nombreValido = nombres.find(n => n.toLowerCase() === input);
+   const nombreValido = nombres.find(n => n.toLowerCase() === input);
     if (nombreValido) {
         reiniciarFormulario(); // 🔄 limpiar antes de mostrar nuevo pase
         resultado.textContent = "Invitado reconocido ✔️";
