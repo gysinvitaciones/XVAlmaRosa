@@ -11,20 +11,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
-    <section id="music-player">
-      <div class="music-container">
-        <button id="play-btn"><i class="fas fa-play"></i></button>
-        <span>Haz clic para reproducir la música</span>
-        <audio id="background-music" src="IMAGENES/audio.mp3"></audio>
-      </div>
-    </section>
-    
+<body>    
     <section id="carousel" class="section">
         <div class="carousel">
             <div class="slide"><img src="IMAGENES/Imagen1.JPG" alt="Imagen 1"></div>
             <div class="slide"><img src="IMAGENES/Imagen2.JPG" alt="Imagen 2"></div>
             <div class="slide"><img src="IMAGENES/Imagen3.JPG" alt="Imagen 3"></div>
+        </div>
+        <!-- Botón de música sobre el carrusel -->
+        <div id="music-overlay">
+          <button id="play-btn"><i class="fas fa-play"></i></button>
+          <audio id="background-music" src="IMAGENES/audio.mp3"></audio>
         </div>
     </section>
 
@@ -76,9 +73,17 @@
         <form id="confirmation-form""> 
 
             <label for="nombre">
-              <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre completo" required oninput="buscarInvitado()">
+              <input 
+                type="text" 
+                id="nombre" 
+                name="nombre" 
+                placeholder="Escribe tu nombre completo" 
+                required 
+                oninput="buscarInvitadoAuto(this.value)"
+                list="sugerencias">
+              <datalist id="sugerencias"></datalist>
             </label>
-            <p id="resultado-busqueda" class="hidden">Buscando nombre...</p>
+            <p id="resultado-busqueda" class="hidden"></p>
             
             <label for="nombre:">
                 <select name="nombre" id="nombre" required onchange="mostrarOpciones()">
