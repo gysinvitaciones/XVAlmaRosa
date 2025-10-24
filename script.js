@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ==== Lista de invitados y pases ====
 const maxInvitadosPorAsistente = {
-    'Milka leyva': 2,
+    'Milka Leyva': 2,
     'Alma Perroni Palma': 4,
     'Erika Torres Perroni': 3,
     'Carmela Perroni Palma': 2,
@@ -58,7 +58,7 @@ const maxInvitadosPorAsistente = {
     'Martha Carrillo Torres': 1,
     'Flor Areli Gonzalez Carrillo': 2,
     'Elisea Carrillo Torres': 2,
-    'María del Consuelo Carrillo Torres': 2,
+    'Maria del Consuelo Carrillo Torres': 2,
     'Anahi Gomez Carrillo': 1,
     'Flor de Maria Gomez Carrillo': 2,
     'Yazmin Santos Carrillo': 3,
