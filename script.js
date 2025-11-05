@@ -117,6 +117,9 @@ const maxInvitadosPorAsistente = {
     'Laura Campos Torres': 2,
     'Diego Rafael Hernandez': 2,
     'Jared': 3,
+    'Nancy Vicencio': 3,
+    'Abigail Muñoz Marquez': 2,
+    'Jose Luis Perez Salinas': 2,
 };
 
 // ==== Mostrar campo de invitados según asistencia ====
