@@ -120,6 +120,15 @@ const maxInvitadosPorAsistente = {
     'Nancy Vicencio': 3,
     'Abigail Muñoz Marquez': 2,
     'Jose Luis Perez Salinas': 2,
+    'Rosendo Sánchez': 5,
+    'Jacinto Sánchez': 4,
+    'Adolfo de la Cruz': 1,
+    'Deysi': 3,
+    'Luciano Carrera': 2,
+    'Elizabeth  Carrera': 2,
+    'Carlos Carrera':2,
+    'Diomar Gomez': 2,
+    'Victor Serrano': 2,
 };
 
 // ==== Mostrar campo de invitados según asistencia ====
