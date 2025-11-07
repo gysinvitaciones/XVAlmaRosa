@@ -137,7 +137,9 @@ const maxInvitadosPorAsistente = {
     'Elizabeth  Carrera': 2,
     'Carlos Carrera':2,
     'Diomar Gomez': 2,
-    'Victor Serrano': 2
+    'Victor Serrano': 2,
+    'Joselyn Bravo': 2,
+    'Lourdes Cabrera': 2,
 };
 
 // ==== Mostrar campo de invitados según asistencia ====
